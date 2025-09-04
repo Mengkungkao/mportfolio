@@ -127,8 +127,8 @@ export default function About() {
                 marginBottom="m"
                 vertical="center"
               >
-                <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Flex paddingX="8">Schedule a call</Flex>
+                <Icon paddingLeft="12"  onBackground="brand-weak" />
+                <Flex paddingX="8">Email me</Flex>
                 <IconButton
                   href={about.calendar.link}
                   data-border="rounded"
@@ -248,9 +248,15 @@ export default function About() {
               <Column fillWidth gap="l" marginBottom="40">
                 {about.studies.institutions.map((institution, index) => (
                   <Column key={`${institution.name}-${index}`} fillWidth gap="4">
-                    <Text id={institution.name} variant="heading-strong-l">
+                    <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4"
+                    ><Text id={institution.name} variant="heading-strong-l">
                       {institution.name}
                     </Text>
+                    
+                    <Text variant="heading-default-xs" onBackground="neutral-weak">
+                        {institution.timeframe}
+                      </Text> 
+                  </Flex>
                     <Text variant="heading-default-xs" onBackground="neutral-weak">
                       {institution.description}
                     </Text>

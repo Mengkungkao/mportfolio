@@ -78,20 +78,20 @@ export const Header = () => {
                 <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
-              {routes["/about"] && (
+              {routes["/abouts"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="person"
-                    href="/about"
+                    href="/abouts"
                     label={about.label}
-                    selected={pathname === "/about"}
+                    selected={pathname === "/abouts"}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="person"
-                    href="/about"
-                    selected={pathname === "/about"}
+                    href="/abouts"
+                    selected={pathname === "/abouts"}
                   />
                 </>
               )}

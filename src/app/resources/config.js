@@ -3,7 +3,7 @@ const baseURL = "https://" + process.env.NEXT_PUBLIC_BASE_URL || "https://demo.m
 
 const routes = {
   "/": true,
-  "/about": true,
+  "/abouts": true,
   "/work": true,
   "/blog": false,
   "/gallery": false,
@@ -46,7 +46,7 @@ const style = {
   solidStyle: "flat", // flat | plastic
   border: "playful", // rounded | playful | conservative
   surface: "translucent", // filled | translucent
-  transition: "all", // all | micro | macro
+  transition: "macro", // all | micro | macro
   scaling: "100" // 90 | 95 | 100 | 105 | 110
 };
 

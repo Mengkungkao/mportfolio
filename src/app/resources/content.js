@@ -1,4 +1,4 @@
-import { Logo } from "@/once-ui/components";
+import { Logo, Row } from "@/once-ui/components";
 
 const person = {
   firstName: "Meng Kung",
@@ -55,24 +55,24 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Graduate Electrical & Electronic Engineer</>,
-  featured: {
-    display: true,
-    title: <>About <strong className="ml-4">Me</strong></>,
-    href: "/about",
-  },
+  headline:(<>
+      Electrical & Electronic Engineer
+    </>
+  ),
+ 
   subline: (
-    <>
+    <div>
       I am currently pursuing a Master of Professional Engineering at Swinburne University of Technology. 
       I have over a year of experience as an electrical system designer, working on lighting, power distribution, 
       and extra-low voltage systems in buildings.
       Aside from employment, I've been volunteering as a tutor, teaching high school students about STEM and 
       guiding them in the best route for their next studies. Currently, I am a team member of Team Swinburne Formula SAE 
       to contribute my knowledge and skills improving car performance.
-      </>
+      </div>
   ),
+  
+  
 };
-
 const about = {
   path: "/about",
   label: "About",
@@ -87,7 +87,7 @@ const about = {
   },
   calendar: {
     display: false,
-    link: "https://cal.com",
+    link: `mailto:${person.email}`,
   },
   intro: {
     display: true,
@@ -149,10 +149,12 @@ const about = {
     institutions: [
       {
         name: "Swinburne University of Technology",
+        timeframe: "2024 - present",
         description: <>Master of Professional Engineering (Electrical & Electronic Engineering)</>,
       },
       {
         name: "Institute of Technology of Cambodia",
+        timeframe: "2017 - 2022",
         description: <>Engineer's degree (Electrical and Electronic Engineering)</>,
       },
     ],

@@ -2,7 +2,7 @@
 
 View the [demo here](https://demo.magic-portfolio.com).
 
-![Magic Portfolio](https://demo.magic-portfolio.com/images/og/home.jpg)
+![Magic Portfolio](/home.jpg)
 
 
 # **Getting started**
