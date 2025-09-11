@@ -12,8 +12,8 @@ const routes = {
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes = {
-  "/work/matlab-simulink-design-portfolio-website": true,
-  "/work/elctrical-load-estimation-design": true,
+  "/work/malab-simulink-model-for-accumulator-heat-transfer-analysis": true,
+  "/work/electrical-load-estimation-design": true,
 };
 
 import { Geist } from "next/font/google";
