@@ -4,37 +4,101 @@ publishedAt: "2023-04-01"
 summary: "Design concept for a three-phase low-voltage electrical distribution system to supply power to the medical equipment."
 images:
   - "/images/projects/project-01/autocad.jpg"
-  - "/images/projects/project-01/autocad.jpg"
+  - "/images/projects/project-01/sld.jpg"
 
 ---
 
-## Overview
-autocad-electrical-system-in-a-building-design
-automate-design-handovers-with-a-figma-to-code-pipeline
-In this project, I will describe about a conceptual design of a three-phase low-voltage electrical routing system for reliable power supply to medical equipment.
+## 1. Introduction  
+This project presents a **conceptual design** of a **three-phase low-voltage electrical routing system** to provide a **reliable power supply** to critical medical equipment.  
 
-## Key Features
-
-- **Figma Plugin Integration**: Developed a custom Figma plugin that extracts design tokens such as colors, typography, and spacing values, and exports them in a format compatible with our codebase.
-- **Code Generation**: Integrated an automated process that translates Figma components into React code using a combination of design tokens and pre-built component templates. This allowed developers to focus more on logic and less on repetitive UI coding.
-- **Continuous Sync**: Established a CI/CD pipeline that continuously synchronizes design changes from Figma to the codebase, ensuring design updates are reflected instantly without manual intervention.
-- **Scalable Design System**: Leveraged a design system that remains the single source of truth for both designers and developers, making it easy to maintain consistency even as the product evolves.
-
-## Technologies Used
-
-- **Figma API**: For extracting design tokens and component data directly from the Figma designs.
-- **React and Next.js**: For building the front-end codebase with clean, reusable components.
-- **Styled-Components**: For managing styles dynamically using design tokens.
-- **GitHub Actions**: For automating the pipeline and syncing design changes to the repository.
-
-## Challenges and Learnings
-
-One of the biggest challenges was ensuring that the generated code was clean and maintainable. This involved setting up intelligent mapping between Figma components and React code structures, as well as managing edge cases like responsive design and conditional rendering. Additionally, the continuous synchronization required a robust error-handling system to prevent conflicts during development.
-
-## Outcome
-
-The automated Figma to code pipeline has streamlined the handoff process, cutting down design-to-development time by 40%. Designers now have more confidence that their designs will be accurately translated into code, and developers can focus on more complex logic and feature development. This project has proven the value of automation in bridging the gap between design and development.
+The design emphasizes:  
+- **Safety:** Use of protection devices (MCB, RCCB, relays, fuses).  
+- **Efficiency:** Optimized routing to reduce power losses.  
+- **Redundancy:** Ensures uninterrupted operation of sensitive devices.  
+- **Compliance:** Meets electrical safety standards for medical facilities.  
 
 ---
 
-This project demonstrates your ability to leverage automation and streamline workflows, which is highly relevant for design engineering portfolios focused on efficiency and innovation.
+## 2. Key Features  
+- Three-phase low-voltage supply system.  
+- Integration of safety and protection devices.  
+- Efficient routing with reduced I²R losses.  
+- Compliance with **IEC 60364** and **AS/NZS 3000 (Wiring Rules)**.  
+- Provision for future expansion and redundancy.  
+
+---
+
+## 3. Electrical Components  
+- **Exhaust Fan** (air circulation).  
+- **Booster Fan** (air pressure control).  
+- **Dehumidifier** (humidity regulation).  
+- **Variable Speed Drive (VSD)** (for motors).  
+- **Control Panel** (switching & monitoring).  
+- **Protection Devices:**  
+  - Miniature Circuit Breaker (**MCB**).  
+  - Residual Current Circuit Breaker (**RCCB**).  
+  - Relays.  
+  - Fuses.  
+
+---
+
+## 4. Single Line Diagram & Load Calculation
+
+A single-line diagram (SLD) is a simplified graphical representation of an electrical system, showing the connections and relationships between components. Symbols represent equipment such as transformers, circuit breakers, and fuses, while lines represent energized or unenergized conductors.
+![Single Line Diagram](/images/projects/project-01/sld.jpg)
+
+An electrical load calculation estimates the total power required to supply a system, from individual components to the complete setup, and is used to select appropriate cables and circuit breakers according to IEC standards.
+---
+
+## 5. Cable Sizing & Voltage Drop
+
+### 5.1 Cable Sizing  
+- Based on **IEC 60287** (current capacity) and **voltage drop** calculations.  
+- Factors considered: load current, length of run, ambient temperature, grouping.  
+
+### 5.2 Voltage Drop
+Based on **IEC 60287 Voltage drop** is limit by 5%.
+
+**Formula for voltage drop of phase to phase/phase to neutral:**  
+```math
+Delta_V_{drop} = 2 × Ib × (Rcosφ + Xsinφ) × L
+```
+
+**Formula for voltage drop of balanced 3-phase:**  
+```math
+Delta_V_{drop} = sqrt(3) × Ib × (Rcosφ + Xsinφ) × L
+```
+---
+
+## 6. Miniature Circuit Breaker Selection
+
+For the three-phase low-voltage medical system, MCBs protect against **overcurrent and short circuits**.  
+
+---
+
+## 7. Normal Operation Modes for Exhaust & Booster Fan
+
+### 7.1. Manual Mode
+
+- Selector switch must be set to **Manual**.
+- Operator can **Start/Stop** the fan via push buttons located on the **cover panel**.
+
+### 7.2. Automatic Mode
+
+- Selector switch must be set to **Auto**.
+- Exhaust Air Fan will automatically run when it receives a **dry contact signal** from the **room thermostat**.
+- Speed control is based on the 0–10V feedback from the pressure transmitter.
+
+---
+
+## 8. Normal Operation Modes of Dehumidifier Operation Sequence  
+
+### 8.1. Manual Mode
+
+- Selector switch must be set to **Manual**.
+- Operator can **Start/Stop** the dehumidifier via push buttons located on the **cover panel**.
+
+### 8.2. Automatic Mode
+
+- Selector switch must be set to **Auto**.
+- Dehumidifier will operate automatically upon receiving a **dry contact signal** from the **room thermostat**.

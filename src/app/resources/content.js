@@ -1,4 +1,4 @@
-import { Logo, Row } from "@/once-ui/components";
+import { Logo, Tag } from "@/once-ui/components";
 
 const person = {
   firstName: "Meng Kung",
@@ -55,24 +55,20 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline:(<>
-      Electrical & Electronic Engineer
-    </>
-  ),
- 
+  headline: <>Graduate Electrical & Electronic Engineer</>,
+  /*featured: {
+    display: false,
+    title: <>About <strong className="ml-4">Me</strong></>,
+    href: "/about",
+  },
+  */
   subline: (
-    <div>
-      I am currently pursuing a Master of Professional Engineering at Swinburne University of Technology. 
-      I have over a year of experience as an electrical system designer, working on lighting, power distribution, 
-      and extra-low voltage systems in buildings.
-      Aside from employment, I've been volunteering as a tutor, teaching high school students about STEM and 
-      guiding them in the best route for their next studies. Currently, I am a team member of Team Swinburne Formula SAE 
-      to contribute my knowledge and skills improving car performance.
-      </div>
+    <>
+      Master's Student at Swinburne | Formula SAE Powertrain Team | Passionate about Automations, Electronics, Renewable Energy & Battery Systems
+      </>
   ),
-  
-  
 };
+
 const about = {
   path: "/about",
   label: "About",
@@ -87,7 +83,7 @@ const about = {
   },
   calendar: {
     display: false,
-    link: `mailto:${person.email}`,
+    link: "https://cal.com",
   },
   intro: {
     display: true,
@@ -108,35 +104,81 @@ const about = {
         role: "Engineering Intern",
         achievements: [
           <>
-            Redesigned the PLC schematic.
+            Redesigned the PLC schematics diagram for the new Aqua production lines.
           </>,
           <>
-            Developed and write a new easy understanding working instruction.
+            Developed and wrote clear, easy-to-understand work instructions.
           
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            
+            src: "/images/projects/project-01/universalbiosensors.jpg",
+            alt: "UBS",
             width: 16,
             height: 9,
           },
         ],
       },
       {
+        company: "Team Swinburne Formula SAE",
+        timeframe: "2024 - Present",
+        role: "Power and Electronics Team Member",
+        achievements: [
+          <>
+          Created a MATLAB Simulink model for battery thermal simulation.
+          </>,
+          <>
+          Designed 3D models of HV motor connectors using SolidWorks.
+          </>,
+          <>
+          Trained in high-voltage electrical systems protection and safety for electric vehicles.
+          </>,
+        ],
+        images: [],
+      },
+      {
         company: "ET&S Engineering Import Export Co., Ltd",
         timeframe: "2022 - 2023",
         role: "Electrical CAD Operator",
+        
         achievements: [
           <>
-            Developed the Electrical load calculation, sizing cables, & voltage drop with Excels and Ecodial Schneider Software.
+            Developed the Electrical load calculation, sizing cables, & voltage drop with Excels spreadsheets.
             
           </>,
           <>
-            Read and write electrical work documents that comply with IEC/BS standard regulatory in Cambodia.
-       
+            Improved speed on design drawings of both electrical systems and extra low-voltage systems by using AutoCAD.
+            
+          </>,
+          <>
+          Applied Dialux Evo to calculate and optimize illuminance levels for specific room layouts.
+          </>,
+        ],
+        images: [],
+      },
+
+      {
+        company: "VRK Corporation Co., Ltd",
+        timeframe: "April - June 2022 ",
+        role: "Site Electrical Trainee",
+        achievements: [
+          <>
+            Trained in site safety protocols and proper use of PPE for protection and accident prevention.
+          </>,
+        ],
+        images: [],
+      },
+
+      {
+        company: "Electricity of Cambodia",
+        timeframe: "Aug - Oct 2020",
+        role: "Electrical Trainee",
+        achievements: [
+          <>
+            Developed the electrical load estimation for transformer sizing.
           </>,
         ],
         images: [],
@@ -151,6 +193,7 @@ const about = {
         name: "Swinburne University of Technology",
         timeframe: "2024 - present",
         description: <>Master of Professional Engineering (Electrical & Electronic Engineering)</>,
+                
       },
       {
         name: "Institute of Technology of Cambodia",
@@ -164,19 +207,73 @@ const about = {
     title: "Technical skills",
     skills: [
       {
-        title: "CAD Drawing",
+        title: "CAD CAM Design and Build",
         description: <>Able to work with 2D AutoCAD, 3D SolidWork, and Fusion360.</>,
         // optional: leave the array empty if you don't want to display images
        
         images: [
           {
-            src: "/images/projects/project-01/cover-02.jpg",
+            src: "/images/projects/project-01/autocad.jpg",
             alt: "Project image",
             width: 16,
             height: 9,
           },
           {
-            src: "/images/projects/project-01/cover-03.jpg",
+            src: "/images/projects/project-01/3dsldwork-01.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+{
+        title: "PCB Design, Build and Programming",
+        description: <>Designed PCBs using Altium and KiCAD, with additional technical skills in soldering.</>,
+        // optional: leave the array empty if you don't want to display images
+       
+        images: [
+          {
+            src: "/images/projects/project-01/altiumcircuit.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/project-01/kicad.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/project-01/kicad-02.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+          
+        ],
+      },
+
+      {
+        title: "Programming",
+        description: <>Writing code C, C++, Python, Matlab, STM32 for engineering programming and simulation.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          
+          {
+            src: "/images/projects/project-01/matlabcoding.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/project-01/accysim.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/project-01/stm32.jpg",
             alt: "Project image",
             width: 16,
             height: 9,
@@ -184,12 +281,31 @@ const about = {
         ],
       },
       {
-        title: "Programming",
-        description: <>Writing code C, C++, Python, Matlab for engineering simulation.</>,
+        title: "Lux Lighting Design",
+        description: <>Used Dialux Evo to calculate illuminance levels in specific rooms.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
+            src: "/images/projects/project-01/gfdialux.png",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/projects/project-01/gfdialux1.png",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "Design and Optimize Solar Photovoltaic",
+        description: <>Performed off-grid solar PV system design and cost optimization using HOMER Pro.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/homerpro.jpg",
             alt: "Project image",
             width: 16,
             height: 9,

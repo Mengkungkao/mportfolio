@@ -20,7 +20,7 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-    <Column maxWidth="m" gap="xl" horizontal="center" vertical="center">
+    <Column maxWidth="m" gap="xl" horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -33,35 +33,30 @@ export default function Home() {
           url: `${baseURL}${about.path}`,
           image: `${baseURL}${person.avatar}`,
         }}
-        
       />
-      <Column fillWidth paddingY="24" gap="m" horizontal="center" vertical="center" >
+      <Column fillWidth paddingY="24" gap="m" horizontal="center">
         <Column maxWidth="s">
-          {home.featured && (
-          <RevealFx fillWidth horizontal="center" paddingTop="6" paddingBottom="12" paddingLeft="44" >
-            <Badge maxWidth="s" background="brand-alpha-weak" paddingX="12" paddingY="4" onBackground="neutral-strong" textVariant="display-strong-m" arrow={false}
+          {/*home.featured && (
+          <RevealFx fillWidth horizontal="center" paddingTop="16" paddingBottom="32" paddingLeft="12">
+            <Badge background="brand-alpha-weak" paddingX="12" paddingY="4" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}
               href={home.featured.href}>
-              <Row paddingX="l" paddingY="m">{home.featured.title}</Row>
+              <Row paddingY="2">{home.featured.title}</Row>
             </Badge>
           </RevealFx>
-          )}
-          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16">
-            <Heading wrap="balance" variant="display-strong-l" >
+          )*/}
+          <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="16">
+            <Heading wrap="balance" variant="display-strong-l">
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="32">
-            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl" >
+          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="32">
+            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
               {home.subline}
             </Text>
           </RevealFx>
           <RevealFx paddingTop="12" delay={0.4} horizontal="start" paddingLeft="12">
-            
-            
-              <Badge maxWidth="s" background="brand-alpha-weak" onBackground="neutral-strong" textVariant="body-default-l" arrow={false}
-              href="/abouts">
-          
-          
+            <Badge maxWidth="s" background="brand-alpha-weak" onBackground="neutral-strong" textVariant="body-default-l" arrow={false}
+              href="/about">
                 {about.avatar.display && (
                   <Avatar
                     style={{ marginLeft: "-0.5rem", marginRight: "0.5rem" }}
@@ -70,10 +65,7 @@ export default function Home() {
                   />
                 )}
                 {about.title}
-              
               </Badge>
-            
-            
           </RevealFx>
         </Column>
       </Column>

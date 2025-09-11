@@ -127,8 +127,8 @@ export default function About() {
                 marginBottom="m"
                 vertical="center"
               >
-                <Icon paddingLeft="12"  onBackground="brand-weak" />
-                <Flex paddingX="8">Email me</Flex>
+                <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
+                <Flex paddingX="8">Schedule a call</Flex>
                 <IconButton
                   href={about.calendar.link}
                   data-border="rounded"
@@ -202,7 +202,7 @@ export default function About() {
                     <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
                       {experience.role}
                     </Text>
-                    <Column as="ul" gap="16">
+                    <Column as="ul" gap="12">
                       {experience.achievements.map((achievement: JSX.Element, index: number) => (
                         <Text
                           as="li"

@@ -17,22 +17,50 @@ team:
 ---
 
 ## Overview
-malab-simulink-model-for-accumulator-heat-transfer-analysis
-This project involves the modeling and simulation of thermal behavior in an accumulator (battery pack) using MATLAB Simulink. The study focuses on how heat is generated within battery cells during charging and discharging cycles and how it is transferred across the accumulator structure. A cooling loop system is then integrated into the model to manage the temperature rise, ensuring safe and efficient operation.
 
-## Key Features
+Lithium-ion batteries are widely used in electric vehicles (EVs), renewable energy storage, and portable electronics. However, battery cells generate heat during charging/discharging due to internal resistance and electrochemical reactions. Excessive temperature rise can degrade battery performance, shorten lifespan, and increase the risk of thermal runaway.
 
-- **Documentation and Usage Guidelines**: Developed comprehensive documentation with Storybook to showcase components, usage patterns, and best practices, ensuring the design system is easy to adopt by other teams.
-
-## Technologies Used
-
-- **Matlab**: For run the simulation test.
+To manage heat, battery thermal management systems (BTMS) are implemented. This project develops a MATLAB/Simulink model to analyze:
+- Heat generation in the battery pack.
+- Heat transfer within cells and modules.
+- Convective cooling using a liquid cooling loop.
 
 
-## Challenges and Learnings
+## Objectives
 
-One key challenge was balancing the need for flexibility with the desire to maintain design consistency. The solution involved creating well-defined design tokens and establishing clear guidelines for when and how components could be customized. Additionally, setting up effective collaboration workflows between designers and developers using Figma and Git was a learning experience that greatly improved the process.
+- Model heat generation of a Li-ion battery pack.
+- Implement thermal transfer (conduction & convection) equations.
+- Design a liquid cooling loop with coolant flow.
+- Simulate system performance under different discharge rates (C-rates).
+- Evaluate effectiveness of the cooling system.
 
-## Outcome
 
-The design system is now actively used across multiple projects, leading to faster development cycles, fewer design inconsistencies, and improved collaboration between design and development teams. It has become a foundation for scaling our products efficiently while ensuring a cohesive user experience.
+
+## MATLAB/Simulink Model Design Components
+
+- **Battery Pack Subsystem**: Equivalent circuit model, heat generation block.
+- **Thermal Subsystem**: Heat transfer equations, RC thermal model.
+- **Cooling Loop Subsystem**: Pump, coolant thermal dynamics, heat exchanger.
+- **Control System**: Feedback control for coolant flow.
+
+
+## Simulink Implementation
+
+- Simscape Electrical for electrical model.
+- Simscape Thermal for heat transfer.
+- Simscape Fluids for coolant loop modeling.
+- Coupling: Electrical → Heat → Thermal → Cooling loop.
+
+## Results & Discussion
+
+- Temperature rise curves show uncontrolled heating can exceed 60°C at high C-rate.
+- Cooling loop maintains temperature within 25–40°C safe range.**
+- Adaptive control improves cooling efficiency and reduces energy consumption of pump.
+- Heat distribution across modules shows reduced thermal gradients.
+
+## Conclusion
+
+This MATLAB/Simulink project demonstrates a practical model for battery thermal management.
+- Heat generation is strongly dependent on current and resistance.
+- Cooling loop with liquid convection effectively regulates temperature.
+- Simulink allows integration of electrical, thermal, and fluid domains.

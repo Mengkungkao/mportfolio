@@ -3,9 +3,9 @@ const baseURL = "https://" + process.env.NEXT_PUBLIC_BASE_URL || "https://demo.m
 
 const routes = {
   "/": true,
-  "/abouts": true,
+  "/about": true,
   "/work": true,
-  "/blog": false,
+  "/blog": true,
   "/gallery": false,
 };
 
@@ -40,7 +40,7 @@ const font = {
 const style = {
   theme: "dark", // theme is not necessary when using ThemeProvider (default)
   neutral: "gray", // sand | gray | slate
-  brand: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+  brand: "aqua", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   accent: "red", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   solid: "contrast", // color | contrast
   solidStyle: "flat", // flat | plastic
@@ -52,7 +52,7 @@ const style = {
 
 const effects = {
   mask: {
-    cursor: false,
+    cursor: true,
     x: 50,
     y: 0,
     radius: 100,
@@ -75,11 +75,11 @@ const effects = {
     color: "brand-background-strong",
   },
   grid: {
-    display: false,
-    opacity: 100,
+    display: true,
+    opacity: 60,
     color: "neutral-alpha-medium",
-    width: "0.25rem",
-    height: "0.25rem",
+    width: "0.5rem",
+    height: "0.5rem",
   },
   lines: {
     display: false,
