@@ -2,7 +2,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 import * as cookie from "cookie";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  console.log("method",req.method)
   if (req.method === "POST") {
     const { password } = req.body;
     const correctPassword = process.env.PAGE_ACCESS_PASSWORD;

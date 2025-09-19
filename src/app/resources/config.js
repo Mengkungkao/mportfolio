@@ -12,7 +12,10 @@ const routes = {
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes = {
-    "/work/electrical-load-estimation-design": true
+    "/work/electrical-load-estimation-design": true,
+    "/work/autocad-electrical-system-in-a-building-design": true,
+    "/work/malab-simulink-model-for-accumulator-heat-transfer-analysis": true,
+    
 };
 
 import { Geist } from "next/font/google";
